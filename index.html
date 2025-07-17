@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Resume and Salary Predictor</title> 
+<style> 
+.input { 
+border: none; 
+padding: 1rem; 
+border-radius: 1rem; 
+background: #e8e8e8; 
+box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #ffffff; 
+transition: 0.3s; 
+} 
+.input:focus { 
+outline-color: #e8e8e8; 
+background: #e8e8e8; 
+box-shadow: inset 20px 20px 60px #c5c5c5, 
+inset -20px -20px 60px #ffffff; 
+
+transition: 0.3s; 
+} 
+button { 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+gap: 10px; 
+font-family: inherit; 
+font-size: 13px; 
+font-weight: 500; 
+text-transform: uppercase; 
+letter-spacing: 0.4px; 
+color: #7e97b8; 
+background-color: #e0e8ef; 
+border-style: solid; 
+border-width: 2px 2px 2px 2px; 
+border-color: rgba(255, 255, 255, 0.333); 
+border-radius: 40px 40px 40px 40px; 
+padding: 16px 24px 16px 28px; 
+transform: translate(0px, 0px) rotate(0deg); 
+
+transition: 0.2s; 
+box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 
+48%); 
+} 
+button:hover { 
+color: #516d91; 
+background-color: #E5EDF5; 
+box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%); 
+} 
+button:active { 
+box-shadow: none; 
+} 
+</style> 
+</head> 
+<body> 
+<h1>Resume Shortlisting</h1> 
+<form action="/resume" method="POST"> 
+<label for="domain">Job Role:</label> 
+<input type="text" id="domain" name="domain" class="input" placeholder="enter 
+here..."><br><br> 
+
+<label for="input_skill">Skills:</label> 
+<input type="text" id="input_skill" name="input_skill" class="input" 
+placeholder="enter here..."><br><br> 
+<button type="submit">Submit </button> 
+</form> 
+<h1> Salary Prediction</h1> 
+<form action="/google" method="POST"> 
+<label for="jobrole">Job Role:</label> 
+<input type="text" id="jobrole" name="jobrole" class="input" placeholder="enter 
+here..."><br><br> 
+<label for="experience">Experience:</label> 
+<input type="number" id="experience" name="experience" class="input" 
+placeholder="enter here..."><br><br> 
+<label for="test_score">Test Score:</label> 
+<input type="number" id="test_score" name="test_score" class="input" 
+placeholder="enter here..."><br><br> 
+<label for="interview_score">Interview Score:</label> 
+<input type="number" id="interview_score" name="interview_score" 
+class="input" placeholder="enter here..."><br><br> 
+<button type="submit">Submit</button> 
+</form> 
+{% if result %} 
+<h2>Result:</h2> 
+
+<p>{{ result }}</p> 
+{% endif %} 
+</body> 
+</html> 
