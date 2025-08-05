@@ -1,9 +1,3 @@
-Based on your input, here's a **detailed and attractive README.md** for your project titled:
-
----
-
-# 🎯 **Resurate Calculation: Machine Learning in Salary Prediction and Resume Parsing**
-
 ## 📌 Overview
 
 In today's competitive job market, predicting salaries effectively and evaluating resumes accurately are vital for organizations to streamline and enhance their hiring processes.
@@ -126,6 +120,4 @@ It brings together powerful regression algorithms, ensemble learning, and NLP te
 
 **Bhanu Prakash Achini**
 📧 [bhanuprakashachini08@gmail.com](mailto:bhanuprakashachini08@gmail.com)
-🔗 [GitHub Profile](https://github.com/Bhanuprakashachini)
-
 ---
