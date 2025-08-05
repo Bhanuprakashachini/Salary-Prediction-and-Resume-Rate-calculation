@@ -1,37 +1,152 @@
-Resurate Calculation: Machine Learning in Salary Prediction and Resume Parsing
+Great! Here's the updated **README.md** including your contact email:
 
-Overview
+---
 
-In today's competitive job market, predicting salaries effectively and evaluating resumes accurately are critical for organizations aiming to optimize their hiring processes. This project, referred to as "Resurate Calculation," explores the application of machine learning techniques in salary prediction and resume parsing.
+# Salary Prediction & Resume Rate Calculation
 
-Objectives
+## 🚀 Overview
 
-Salary Prediction: Utilize machine learning algorithms to forecast salaries based on factors like job experience, skills, education, geographic location, and industry trends.
+This repository builds and evaluates machine learning models to:
 
-Resume Parsing: Implement natural language processing (NLP) techniques to extract and evaluate key information from resumes efficiently.
+* Predict individual salaries based on attributes like years of experience, education, industry, gender, job title, etc.
+* Compute **Resume Rating Scores**—automated scoring of resumes (e.g. keyword matching, experience relevance, formatting quality).
 
-Features
+It leverages Exploratory Data Analysis, feature engineering, and model evaluation to deliver actionable predictions and resume evaluations.
 
-1. Salary Prediction
+---
 
-Regression Models: Leverage linear and polynomial regression to establish baseline predictions.
+## 📁 Project Structure
 
-Ensemble Methods: Utilize random forests and gradient boosting for improved accuracy.
+```
+├── data/
+│   ├── raw/                  # Raw data files (e.g. Salary_Data.csv, Resumes.csv)
+│   ├── processed/            # Cleaned and transformed datasets used for modeling
+├── notebooks/
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_eda_and_visualization.ipynb
+│   ├── 03_model_building.ipynb
+│   ├── 04_resume_scoring.ipynb
+├── src/
+│   ├── preprocessing.py     # Data cleaning & feature engineering
+│   ├── modeling.py          # Model training & evaluation logic
+│   ├── scoring.py           # Resume scoring & rating logic
+│   ├── utils.py             # Shared helper functions
+├── models/
+│   ├── best_model.pkl        # Serialized trained model
+│   └── resume_score_model.pkl
+├── requirements.txt
+└── README.md
+```
 
-Deep Learning Architectures: Explore neural networks for capturing complex patterns in data.
+---
 
-2. Resume Parsing
+## ⚙️ Setup & Dependencies
 
-NLP Techniques: Employ methods like tokenization, named entity recognition (NER), and semantic analysis.
+1. **Clone the repository**
 
-Data Extraction: Extract key information such as education, skills, work experience, and certifications.
+   ```bash
+   git clone https://github.com/Bhanuprakashachini/Salary-Prediction-and-Resume-Rate-calculation.git
+   cd Salary-Prediction-and-Resume-Rate-calculation
+   ```
 
-Evaluation: Match extracted resume data against job descriptions for suitability analysis.
+2. **Install Python dependencies**
 
-Technologies Used
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Programming Language: Python
+3. **Explore in Jupyter Notebooks**
 
-Libraries and Frameworks:
+   * Run `notebooks/01_data_preprocessing.ipynb` through `03_model_building.ipynb` for salary prediction modeling.
+   * Run `notebooks/04_resume_scoring.ipynb` to understand how resume ratings are computed.
 
-Salary Prediction: scikit-learn,
+---
+
+## 📊 Data & Preprocessing
+
+* **Salary dataset**: Contains features such as `age`, `gender`, `education`, `job_title`, `years_experience`, and salary target.
+* **Resume dataset**: Includes candidate resumes parsed into features like relevant skills, keyword matches, years in role, etc.
+
+Data processing includes:
+
+* Handling missing/malformed entries
+* Encoding categorical variables
+* Normalizing continuous features
+* Feature engineering (e.g. text vectorization, keyword scoring)
+
+---
+
+## 🧠 Modeling & Evaluation
+
+We train and compare multiple regression models:
+
+* **Linear Regression**
+* **Decision Tree Regressor**
+* **Random Forest Regressor**
+
+Evaluation metrics:
+
+* Mean Absolute Error (MAE)
+* Mean Squared Error (MSE / RMSE)
+* R‑squared (R²)
+
+---
+
+## 📈 Resume Rate Scoring
+
+* Loads resumes and computes a **Resume Rating Score**, based on:
+
+  * Matching job keywords
+  * Education and experience alignment
+  * Formatting markers and length
+
+Customize the logic in `scoring.py` for your domain or job requirements.
+
+---
+
+## 🏃 Usage
+
+```python
+from modeling import load_model, predict_salary
+from scoring import rate_resume
+
+model = load_model('models/best_model.pkl')
+salary_pred = predict_salary(model, new_candidate_dataframe)
+
+resume_score = rate_resume('models/resume_score_model.pkl', resume_text)
+```
+
+---
+
+## 🧪 Extensions
+
+* Integrate NLP models for advanced resume parsing
+* Add web UI (Streamlit/Flask)
+* Deploy via API for job portals or HR systems
+
+---
+
+## 🤝 Contributing
+
+Want to help improve this project? Here's how:
+
+1. Fork the repo
+2. Make your changes
+3. Submit a pull request!
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 📬 Contact
+
+For queries, suggestions, or collaborations:
+
+**Email**: [bhanuprakashachini08@gmail.com](mailto:bhanuprakashachini08@gmail.com)
+**GitHub**: [@Bhanuprakashachini](https://github.com/Bhanuprakashachini)
+
+---
